@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#container {
+    position: relative;
+    display: flex; /* Activa el modelo Flexbox */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;
+    width: auto;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.315);
+    
+}
+
+.contenido{
+    width: 900px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.473);
+    display: grid;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
+
+.titulo {
+}
+
+.contenedorSectiones {
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
