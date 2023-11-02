@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gasto Semanal</title>
+    <title>Gastos Semanales</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="main.js"></script>
 </head>
-
 <body>
-    <img src="img/image1.png" alt="">
-    <div id="container">
-        <div class="contenido">
-            <h1 class="titulo">Gasto Semanal</h1>
-            <article class="contenedorSectiones">
-                <section>
-                    <h3>Añade tus gastos aquí</h3>
-                    <label for="Gasto">Gasto:</label>
-                    <input type="text" name="" id="" placeholder="Nombre Gasto">
-                    <label for="Cantidad">Cantidad:</label>
-                    <input type="text" name="" id="" placeholder="Cantidad en $">
-                    <label for="Presupesto"></label>
-                    <button type="button" value="Aceptar">Aceptar</button>
-                </section>
-                <section>
-                    <h3>Listado</h3>
+    <div id="mensaje"></div>
+    
+    <div id="divInicial">
+        <label for="presupuestoInicial">Ingrese el presupuesto inicial:</label>
+        <input type="number" id="presupuestoInicial" />
+        <button id="btnAceptar">Aceptar</button>
+    </div>
+    
+    <div id="formulario">
+    <div class="q">
+    <div class="title">Gestión de Gastos Semanales</div>
 
-                    <label for="Cantidad">Presupuesto: $</label>
-                    <input type="text" name="" id="">
-                    <label for="Cantidad">Restante: $</label>
-                    <input type="text" name="" id="" ¿>
-                </section>
-            </article>
+    <div class="container">
+        <div class="progress-bar"></div>
+       
+        <div class="form-column">
+            <label for="nombreArticulo">Nombre del Artículo:</label>
+            <input type="text" id="nombreArticulo">
+
+            <label for="precioArticulo">Precio del Artículo:</label>
+            <input type="number" id="precioArticulo" min="0">
+
+            <button id="agregarBtn" onclick="agregarGasto()">Agregar</button>
+        </div>
+
+        <div class="list-column">
+            <label for="presupuestoInicial">Presupuesto Inicial:</label>
+            <span id="presupuestoInicialLabel">$0</span>
+
+            <label for="saldoRestante">Saldo Restante:</label>
+            <span id="saldoRestanteLabel" class="saldo-restante">$0</span>
+
+            <div id="listaGastos"></div>
         </div>
     </div>
-
+    </div>
+</div>
+    <script src="./main.js"></script>
 </body>
-
 </html>
