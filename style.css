@@ -1,44 +1,159 @@
-* {
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
-#container {
-    position: relative;
-    display: flex; /* Activa el modelo Flexbox */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center;
-    width: auto;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.315);
-    
-}
-
-.contenido{
-    width: 900px;
-    height: 200px;
-    background-color: rgba(0, 0, 0, 0.473);
-    display: grid;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;
-}
-
-.titulo {
-}
-
-.contenedorSectiones {
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
+/* Estilos para el área de mensajes */
+#mensaje {
     position: fixed;
-    z-index: -1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilos para mensajes de error */
+#mensaje.error {
+    background-color: #e74c3c;
+}
+
+/* Estilos para animación de entrada y salida del mensaje */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Aplicar animación al mensaje */
+#mensaje.animado {
+    animation: fadeInOut 3s ease-out;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
+}
+
+.container {
+    width: 800px; /* Cambié el valor a 100% para que ocupe toda la pantalla */
+    max-width: 100%; /* Establece un ancho máximo para evitar que el contenedor sea demasiado ancho */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Cambio a columna para apilar elementos verticalmente */
+    position: relative;
+}
+
+/* Estilos para la barra de progreso */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #34db3cab;
+    margin-bottom: 10px;
+}
+
+.form-column,
+.list-column {
+    padding: 10px;
+}
+
+/* Estilos para el formulario */
+.form-column {
+    background-color: #db34903d;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px; /* Añade más espacio interno para mejorar la visualización */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1eca74;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilos para la lista de gastos */
+.list-column {
+    background-color: #ffb8b8b9;
+    border-radius: 8px;
+    position: relative;
+}
+
+.saldo-restante {
+    font-weight: bold;
+}
+
+.gasto-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gasto-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #568fdb;
+    text-align: center; /* Centrar el texto */
+}
+
+.q {
+    display: grid;
+}
+
+#formulario {
+    display: none;
+}
+
+#divInicial label {
+    color: #1eca74; /* Cambia a tu color preferido */
+    font-weight: bold;
+}
+
+#listaGastos {
+    margin-bottom: 70px;
 }
