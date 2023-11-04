@@ -67,6 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             saldoRestante -= precioArticulo;
             actualizarEtiquetas();
+            
+            document.getElementById('nombreArticulo').value = '';
+            document.getElementById('precioArticulo').value = '';
+
             agregarGastoALista(gasto);
             actualizarColorBarraProgreso();
         };
