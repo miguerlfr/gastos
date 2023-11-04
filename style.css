@@ -157,3 +157,7 @@ button:disabled {
 #listaGastos {
     margin-bottom: 70px;
 }
+
+#mensaje {
+    z-index: 9999;
+}
